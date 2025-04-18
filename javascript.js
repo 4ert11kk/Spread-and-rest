@@ -62,8 +62,9 @@ console.log(...arr);
 // которая принимает объект с параметрами и возвращает новый объект без одного указанного параметра.
 console.log('Задание 5');
 
-function printI ( {name , ...last}) {
-    return last;
+function printI (user, str) {
+    const { [str]:n, ...rest } = user;
+    return rest;
 }
 
 const user3 = {
@@ -72,5 +73,5 @@ const user3 = {
     country: 'USA'
 }
 
-console.log(printI(user3));
+console.log(printI(user3, 'age'));
 
